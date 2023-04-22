@@ -65,7 +65,7 @@ class ViewController: UIViewController {
 
         let verticalContentCard1 = makeVerticalContentCard()
         verticalContentCard1.view?.apply(style: .neutral)
-//        stackView.addArrangedSubview(verticalContentCard1)
+        stackView.addArrangedSubview(verticalContentCard1)
 
     }
 
@@ -98,7 +98,6 @@ class ViewController: UIViewController {
 
         let cells = (0...3).map { _ in
             let cell = commonFactory.makeIconTitleSubtitleCell()
-            cell.apply(style: .shadow)
             cell.iconView.style = .m
             cell.iconView.image = UIImage(named: "avatarPlaceholder", in: Bundle.main, with: nil)
             cell.titleView.textColor = .textPrimary
