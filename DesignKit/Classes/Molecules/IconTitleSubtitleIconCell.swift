@@ -49,3 +49,45 @@ public final class IconTitleSubtitleCell: UIView {
         )
     }
 }
+
+public final class TitleSubtitleIconCell: UIView {
+    private let textStackView = UIStackView()
+    public let iconView = IconAtomView()
+    public let titleView = TextAtomView()
+    public let subtitleView = TextAtomView()
+
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        stupView()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func stupView() {
+        backgroundColor = .clear
+        textStackView.axis = .vertical
+        textStackView.spacing = .xSmall
+        textStackView.addArrangedSubview(titleView)
+        textStackView.addArrangedSubview(subtitleView)
+
+        let views: [UIView] = [iconView, textStackView]
+        views.forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            addSubview($0)
+        }
+
+        NSLayoutConstraint.activate(
+            [
+                iconView.rightAnchor.constraint(equalTo: rightAnchor, constant: -.large),
+                iconView.topAnchor.constraint(equalTo: topAnchor, constant: .large),
+                iconView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -.large),
+
+                textStackView.centerYAnchor.constraint(equalTo: iconView.centerYAnchor),
+                textStackView.rightAnchor.constraint(equalTo: iconView.leftAnchor, constant: .medium),
+                textStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: .large),
+            ]
+        )
+    }
+}

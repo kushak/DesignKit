@@ -42,6 +42,10 @@ extension CommonFactory: IMoleculeFactory {
     public func makeIconTitleSubtitleCell() -> IconTitleSubtitleCell {
         moleculeFactory.makeIconTitleSubtitleCell()
     }
+
+    public func makeTitleSubtitleIconCell() -> TitleSubtitleIconCell {
+        moleculeFactory.makeTitleSubtitleIconCell()
+    }
 }
 
 extension CommonFactory: IOrganismeFactory {

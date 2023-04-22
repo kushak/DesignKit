@@ -9,6 +9,7 @@ import Foundation
 
 public protocol IMoleculeFactory {
     func makeIconTitleSubtitleCell() -> IconTitleSubtitleCell
+    func makeTitleSubtitleIconCell() -> TitleSubtitleIconCell
 }
 
 public final class MoleculeFactory: IMoleculeFactory {
@@ -16,5 +17,9 @@ public final class MoleculeFactory: IMoleculeFactory {
     
     public func makeIconTitleSubtitleCell() -> IconTitleSubtitleCell {
         IconTitleSubtitleCell()
+    }
+
+    public func makeTitleSubtitleIconCell() -> TitleSubtitleIconCell {
+        TitleSubtitleIconCell()
     }
 }

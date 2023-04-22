@@ -47,9 +47,18 @@ class ViewController: UIViewController {
         iconTitleSubtitleCellShadow.view?.apply(style: .shadow)
         stackView.addArrangedSubview(iconTitleSubtitleCellShadow)
 
+
         let iconTitleSubtitleCellShadow1 = makeIconTitleSubtitleCell(description: nil)
         iconTitleSubtitleCellShadow1.view?.apply(style: .shadow)
         stackView.addArrangedSubview(iconTitleSubtitleCellShadow1)
+
+        let titleSubtitleIconCellShadow = makeTitleSubtitleIconCell()
+        titleSubtitleIconCellShadow.view?.apply(style: .shadow)
+        stackView.addArrangedSubview(titleSubtitleIconCellShadow)
+
+        let titleSubtitleIconCellShadow1 = makeTitleSubtitleIconCell(description: nil)
+        titleSubtitleIconCellShadow1.view?.apply(style: .shadow)
+        stackView.addArrangedSubview(titleSubtitleIconCellShadow1)
 
         let verticalContentCard = makeVerticalContentCard()
         verticalContentCard.view?.apply(style: .shadow)
@@ -62,6 +71,14 @@ class ViewController: UIViewController {
         let iconTitleSubtitleCellNeutral1 = makeIconTitleSubtitleCell(description: nil)
         iconTitleSubtitleCellNeutral1.view?.apply(style: .neutral)
         stackView.addArrangedSubview(iconTitleSubtitleCellNeutral1)
+
+        let titleSubtitleIconCellNeutral = makeTitleSubtitleIconCell()
+        titleSubtitleIconCellNeutral.view?.apply(style: .neutral)
+        stackView.addArrangedSubview(titleSubtitleIconCellNeutral)
+
+        let titleSubtitleIconCellNeutral1 = makeTitleSubtitleIconCell(description: nil)
+        titleSubtitleIconCellNeutral1.view?.apply(style: .neutral)
+        stackView.addArrangedSubview(titleSubtitleIconCellNeutral1)
 
         let verticalContentCard1 = makeVerticalContentCard()
         verticalContentCard1.view?.apply(style: .neutral)
@@ -87,6 +104,26 @@ class ViewController: UIViewController {
 
         return containerView
     }
+
+    func makeTitleSubtitleIconCell(description: String? = "Description") -> ContainerView {
+        let containerView = ContainerView()
+        let cell = commonFactory.makeTitleSubtitleIconCell()
+//        cell.apply(style: .shadow)
+        cell.iconView.style = .m
+        cell.iconView.image = UIImage(named: "avatarPlaceholder", in: Bundle.main, with: nil)
+        cell.titleView.textColor = .textPrimary
+        cell.titleView.style = .bodyL
+        cell.titleView.text = "Title"
+        cell.subtitleView.textColor = .textSecondary
+        cell.subtitleView.style = .bodyS
+        cell.subtitleView.text = description
+        cell.subtitleView.isHidden = description == nil
+
+        containerView.view = cell
+
+        return containerView
+    }
+
 
     func makeVerticalContentCard() -> ContainerView {
         let containerView = ContainerView()
