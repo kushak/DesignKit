@@ -1,0 +1,6 @@
+Target dependency graph (3 targets)
+DesignKit in Pods, no dependencies
+Pods-DesignKit_Example in Pods, depends on:
+DesignKit in Pods (explicit)
+Pods-DesignKit_Tests in Pods, depends on:
+Pods-DesignKit_Example in Pods (explicit)
