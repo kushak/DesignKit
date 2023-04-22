@@ -1,0 +1,16 @@
+PODS:
+  - DesignKit (0.1.0)
+
+DEPENDENCIES:
+  - DesignKit (from `../`)
+
+EXTERNAL SOURCES:
+  DesignKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DesignKit: 74df6559cb2ed556fc5aa2844a7d22a025a21514
+
+PODFILE CHECKSUM: bd0b29913b9635c950b7e9a64de8579d137fd640
+
+COCOAPODS: 1.11.3

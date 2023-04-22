@@ -1,0 +1,22 @@
+{
+  "name": "DesignKit",
+  "version": "0.1.0",
+  "summary": "A short description of DesignKit.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Shipulin Oleg/DesignKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Shipulin Oleg": "oshipulin@ozon.ru"
+  },
+  "source": {
+    "git": "https://github.com/Shipulin Oleg/DesignKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "DesignKit/Classes/**/*"
+}
