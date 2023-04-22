@@ -45,10 +45,10 @@ public final class VerticalContentCard: UIView {
                 headerText.topAnchor.constraint(equalTo: topAnchor, constant: .medium),
                 headerText.rightAnchor.constraint(equalTo: rightAnchor, constant: -.large),
 
-                stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: .large),
+                stackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
                 stackView.topAnchor.constraint(equalTo: headerText.bottomAnchor, constant: 0),
                 stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-                stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -.large),
+                stackView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
             ]
         )
     }

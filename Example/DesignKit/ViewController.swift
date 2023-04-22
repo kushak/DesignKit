@@ -51,6 +51,10 @@ class ViewController: UIViewController {
         iconTitleSubtitleCellShadow1.view?.apply(style: .shadow)
         stackView.addArrangedSubview(iconTitleSubtitleCellShadow1)
 
+        let verticalContentCard = makeVerticalContentCard()
+        verticalContentCard.view?.apply(style: .shadow)
+        stackView.addArrangedSubview(verticalContentCard)
+
         let iconTitleSubtitleCellNeutral = makeIconTitleSubtitleCell()
         iconTitleSubtitleCellNeutral.view?.apply(style: .neutral)
         stackView.addArrangedSubview(iconTitleSubtitleCellNeutral)
@@ -58,6 +62,11 @@ class ViewController: UIViewController {
         let iconTitleSubtitleCellNeutral1 = makeIconTitleSubtitleCell(description: nil)
         iconTitleSubtitleCellNeutral1.view?.apply(style: .neutral)
         stackView.addArrangedSubview(iconTitleSubtitleCellNeutral1)
+
+        let verticalContentCard1 = makeVerticalContentCard()
+        verticalContentCard1.view?.apply(style: .neutral)
+//        stackView.addArrangedSubview(verticalContentCard1)
+
     }
 
     func makeIconTitleSubtitleCell(description: String? = "Description") -> ContainerView {
@@ -79,28 +88,34 @@ class ViewController: UIViewController {
         return containerView
     }
 
-//    func makeIconTitleSubtitleCell(description: String? = "Description") -> ContainerView {
-//        let containerView = ContainerView()
-//
-//
-//        let cells = (0...3).forEach { _ in
-//            let cell = commonFactory.makeIconTitleSubtitleCell()
-//            cell.apply(style: .shadow)
-//            cell.iconView.style = .m
-//            cell.iconView.image = UIImage(named: "avatarPlaceholder", in: Bundle.main, with: nil)
-//            cell.titleView.textColor = .textPrimary
-//            cell.titleView.style = .bodyL
-//            cell.titleView.text = "Title"
-//            cell.subtitleView.textColor = .textSecondary
-//            cell.subtitleView.style = .bodyS
-//            cell.subtitleView.text = description
-//            cell.subtitleView.isHidden = description == nil
-//        }
-//
-//        containerView.view = cell
-//
-//        return containerView
-//    }
+    func makeVerticalContentCard() -> ContainerView {
+        let containerView = ContainerView()
+        let view = commonFactory.makeVerticalContentCard()
+
+        view.headerText.style = .headingM
+        view.headerText.textColor = .textPrimary
+        view.headerText.text = "Header"
+
+        let cells = (0...3).map { _ in
+            let cell = commonFactory.makeIconTitleSubtitleCell()
+            cell.apply(style: .shadow)
+            cell.iconView.style = .m
+            cell.iconView.image = UIImage(named: "avatarPlaceholder", in: Bundle.main, with: nil)
+            cell.titleView.textColor = .textPrimary
+            cell.titleView.style = .bodyL
+            cell.titleView.text = "Title"
+            cell.subtitleView.textColor = .textSecondary
+            cell.subtitleView.style = .bodyS
+            cell.subtitleView.text = "Description"
+            return cell
+        }
+
+        view.contentViews = cells
+
+        containerView.view = view
+
+        return containerView
+    }
 
 }
 

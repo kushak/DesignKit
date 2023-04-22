@@ -23,6 +23,7 @@ public final class IconTitleSubtitleCell: UIView {
     }
 
     private func stupView() {
+        backgroundColor = .clear
         textStackView.axis = .vertical
         textStackView.spacing = .xSmall
         textStackView.addArrangedSubview(titleView)

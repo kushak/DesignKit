@@ -52,11 +52,12 @@ public final class TextAtomView: UIView {
     }
 
     private func updateContent() {
-        label.font = UIFont(
-            name: style.fontName.rawValue,
-            size: CGFloat(style.fontSize.rawValue)
-        )
-        label.text = text
-//        label.attributedText = text?.applying(style)
+//        label.font = UIFont(
+//            name: style.fontName.rawValue,
+//            size: CGFloat(style.fontSize.rawValue)
+//        )
+//        label.text = text
+
+        label.attributedText = text?.applying(style)
     }
 }
